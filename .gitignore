@@ -1,3 +1,6 @@
+# Firebase config keys
+web/init-firebase.js
+
 # Miscellaneous
 *.class
 *.log

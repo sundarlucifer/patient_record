@@ -6,11 +6,14 @@ enum FieldSize {
 }
 
 class CustomInput extends StatelessWidget {
+  String _value;
+
+  get value => _value;
 
   final String header;
   final FieldSize fieldSize;
 
-  const CustomInput({Key key, this.header, this.fieldSize}) : assert(header!=null && fieldSize!=null), super(key: key);
+  CustomInput({Key key, this.header, this.fieldSize}) : assert(header!=null && fieldSize!=null), super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +54,7 @@ class CustomInput extends StatelessWidget {
                 fontSize: 24.0,
               ),
               maxLines: fieldSize==FieldSize.small ? 1 : null,
+              onChanged: (value) => _value = value,
             ),
           ),
         ),
